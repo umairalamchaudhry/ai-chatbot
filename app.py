@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template, jsonify
 import json
-import requests
 import asyncio
 import aiohttp
 from deep_translator import GoogleTranslator
@@ -21,7 +20,7 @@ response_cache = {}
 async def fetch_ollama_response(session, prompt):
     """Fetch a response from the Ollama API asynchronously."""
     payload = {
-        "model": "hf.co/bartowski/Dolphin3.0-Llama3.1-8B-GGUF:latest",  # Use the Dolphin3 model
+        "model": "hf.co/bartowski/Dolphin3.0-Llama3.1-8B-GGUF:latest",  # Using the Dolphin3 model
         "prompt": prompt,
         "stream": False,
     }

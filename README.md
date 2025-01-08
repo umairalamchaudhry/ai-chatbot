@@ -47,4 +47,4 @@ EcoAssist is a multilingual e-commerce chatbot built using Python and Flask. It 
  - "Do you offer international shipping?"
 
  ## Knowledge Base
-  - Please review the knowledge base and update it as per your requirements.
+  - Please review the knowledge base (knowledge_base.json) and update it as per your requirements.

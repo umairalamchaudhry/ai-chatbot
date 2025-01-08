@@ -4,10 +4,12 @@ import asyncio
 import aiohttp
 from deep_translator import GoogleTranslator
 
+# Initialize the app
 app = Flask(__name__)
 
 # Load the knowledge base
 with open("knowledge_base.json", "r", encoding="utf-8") as f:
+    # Load the JSON data from knowledge_base into the knowledge_base golbal variable
     knowledge_base = json.load(f)
 
 # Ollama API endpoint
@@ -40,7 +42,8 @@ def generate_response_with_ollama(user_query, language="en"):
 
     # Create a prompt that includes the knowledge base
     prompt = f"""
-    You are a helpful e-commerce customer support chatbot. Your task is to answer user queries based on the following knowledge base. If the answer is not in the knowledge base, generate a response on your own.
+    You are a helpful e-commerce customer support chatbot. Your task is to answer user queries based on the following knowledge base. 
+    If the answer is not in the knowledge base, generate a response on your own.
 
     Knowledge Base:
     {json.dumps(knowledge_base, indent=2)}
